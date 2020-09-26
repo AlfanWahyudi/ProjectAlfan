@@ -28,7 +28,7 @@ public class BarangCtl {
     private final FrameUtama frame;
     private final BarangInc brg;
     private List<Barang> data;
-    private String oldId;
+    private int oldId ;
     private final String save = "Simpan";
     private final String add = "Tambah";
     private final String edit = "Rubah";
@@ -62,6 +62,7 @@ public class BarangCtl {
                     muatData();
                     JOptionPane.showMessageDialog(frame, ok);
                 }
+                
 
             }
         }
@@ -69,8 +70,8 @@ public class BarangCtl {
 
     public void edit() {
         if (frame.getBtnEdit().getText().equals(edit)) {
-            oldId = frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString();
-            //frame.getTxtid().setText(oldId);
+            Barang b = new Barang();
+            oldId = Integer.parseInt(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString());
             frame.getTxtNama().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 1).toString());
             frame.getTxtMaterial().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 2).toString());
             frame.getTxtUkuran().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 3).toString());
@@ -84,12 +85,11 @@ public class BarangCtl {
                 focus();
             } else {
                 Barang b = new Barang();
-                //b.setId(Integer.parseInt(frame.getTxtid().getText()));
                 b.setNama(frame.getTxtNama().getText());
                 b.setMaterial(frame.getTxtMaterial().getText());
                 b.setUkuran(frame.getTxtUkuran().getText());
                 b.setHargaSatuan(Integer.parseInt(frame.getTxtHargaSatuan().getText()));
-                int status = brg.update(b, Integer.parseInt(oldId));
+                int status = brg.update(b, oldId);
                 if (status != 0) {
                     frame.getBtnEdit().setText(edit);
                     setButtonEnabled(true);
@@ -146,8 +146,10 @@ public class BarangCtl {
                 data = brg.select();
                 for (int i = 0; i < data.size(); i++) {
                     Object[] dataTable = {
-                        i + 1, data.get(i).getNama(), data.get(i).getMaterial(), data.get(i).getUkuran(),
-                            data.get(i).getHargaSatuan()
+                          data.get(i).getId() , data.get(i).getNama(), data.get(i).getMaterial(), data.get(i).getUkuran(),data.get(i).getHargaSatuan()
+                        
+                            
+                            
                     };
                     model.addRow(dataTable);
                 }
@@ -172,7 +174,6 @@ public class BarangCtl {
     }
 
     private void setFieldEnabled(boolean mode) {
-        //frame.getTxtid().setEnabled(mode);
         frame.getTxtNama().setEnabled(mode);
         frame.getTxtMaterial().setEnabled(mode);
         frame.getTxtUkuran().setEnabled(mode);
@@ -185,7 +186,6 @@ public class BarangCtl {
     }
 
     private void clear() {
-        //frame.getTxtid().setText(null);
         frame.getTxtNama().setText(null);
         frame.getTxtMaterial().setText(null);
         frame.getTxtUkuran().setText(null);
