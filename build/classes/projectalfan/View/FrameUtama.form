@@ -41,7 +41,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="MenuPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="KontenPanel" pref="703" max="32767" attributes="0"/>
+                  <Component id="KontenPanel" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -267,7 +267,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="txtId">
+            <Container class="javax.swing.JPanel" name="BarangPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="ff" type="rgb"/>

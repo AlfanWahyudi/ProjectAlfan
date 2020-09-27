@@ -88,7 +88,7 @@ public class FrameUtama extends javax.swing.JFrame {
         LabelST = new javax.swing.JLabel();
         RubahPdfButton = new javax.swing.JButton();
         TampilSubTotal = new javax.swing.JLabel();
-        txtId = new javax.swing.JPanel();
+        BarangPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         barangTable = new javax.swing.JTable();
         NamaTextField = new projectalfan.Ultility.PlaceHolderNama();
@@ -201,8 +201,8 @@ public class FrameUtama extends javax.swing.JFrame {
 
         KontenPanel.add(PenawaranPanel, "card2");
 
-        txtId.setBackground(new java.awt.Color(255, 102, 102));
-        txtId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Barang", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        BarangPanel.setBackground(new java.awt.Color(255, 102, 102));
+        BarangPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Barang", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
 
         barangTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,39 +270,39 @@ public class FrameUtama extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout txtIdLayout = new javax.swing.GroupLayout(txtId);
-        txtId.setLayout(txtIdLayout);
-        txtIdLayout.setHorizontalGroup(
-            txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(txtIdLayout.createSequentialGroup()
+        javax.swing.GroupLayout BarangPanelLayout = new javax.swing.GroupLayout(BarangPanel);
+        BarangPanel.setLayout(BarangPanelLayout);
+        BarangPanelLayout.setHorizontalGroup(
+            BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BarangPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(NamaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                         .addComponent(MaterialTextField, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(UkuranTextField, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(HargaSatuanTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addGroup(txtIdLayout.createSequentialGroup()
+                    .addGroup(BarangPanelLayout.createSequentialGroup()
                         .addComponent(TambahButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RubahButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(HapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
-                .addGroup(txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txtIdLayout.createSequentialGroup()
+                .addGroup(BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BarangPanelLayout.createSequentialGroup()
                         .addComponent(btnRefresh)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        txtIdLayout.setVerticalGroup(
-            txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(txtIdLayout.createSequentialGroup()
+        BarangPanelLayout.setVerticalGroup(
+            BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BarangPanelLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(txtIdLayout.createSequentialGroup()
+                    .addGroup(BarangPanelLayout.createSequentialGroup()
                         .addComponent(NamaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(MaterialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,7 +311,7 @@ public class FrameUtama extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(HargaSatuanTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(txtIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(BarangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TambahButton)
                             .addComponent(RubahButton)
                             .addComponent(HapusButton))))
@@ -320,7 +320,7 @@ public class FrameUtama extends javax.swing.JFrame {
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
-        KontenPanel.add(txtId, "card3");
+        KontenPanel.add(BarangPanel, "card3");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -330,7 +330,7 @@ public class FrameUtama extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(MenuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(KontenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
+                .addComponent(KontenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         MainPanelLayout.setVerticalGroup(
@@ -366,7 +366,7 @@ public class FrameUtama extends javax.swing.JFrame {
         KontenPanel.repaint();
         KontenPanel.revalidate();
         //add panel
-        KontenPanel.add(txtId);
+        KontenPanel.add(BarangPanel);
         KontenPanel.repaint();
         KontenPanel.revalidate();
     }//GEN-LAST:event_BarangButtonActionPerformed
@@ -443,6 +443,7 @@ public class FrameUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BarangButton;
+    private javax.swing.JPanel BarangPanel;
     private javax.swing.JButton HapusButton;
     private javax.swing.JTextField HargaSatuanTextField;
     private javax.swing.JPanel KontenPanel;
@@ -463,6 +464,5 @@ public class FrameUtama extends javax.swing.JFrame {
     private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPanel txtId;
     // End of variables declaration//GEN-END:variables
 }

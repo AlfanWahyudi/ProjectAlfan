@@ -71,7 +71,7 @@ public class BarangCtl {
     public void edit() {
         if (frame.getBtnEdit().getText().equals(edit)) {
             Barang b = new Barang();
-            oldId = Integer.parseInt(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString());
+           // oldId = Integer.parseInt(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString());
             frame.getTxtNama().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 1).toString());
             frame.getTxtMaterial().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 2).toString());
             frame.getTxtUkuran().setText(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 3).toString());
@@ -89,7 +89,11 @@ public class BarangCtl {
                 b.setMaterial(frame.getTxtMaterial().getText());
                 b.setUkuran(frame.getTxtUkuran().getText());
                 b.setHargaSatuan(Integer.parseInt(frame.getTxtHargaSatuan().getText()));
-                int status = brg.update(b, oldId);
+                
+                String nama = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 1).toString());
+                String material = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 2).toString());
+                String ukuran = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 3).toString());
+                int status = brg.update(b, nama, material, ukuran);
                 if (status != 0) {
                     frame.getBtnEdit().setText(edit);
                     setButtonEnabled(true);
@@ -110,8 +114,11 @@ public class BarangCtl {
             };
             int op = JOptionPane.showConfirmDialog(frame, pesan, "Peringatan!", JOptionPane.OK_CANCEL_OPTION);
             if (op == JOptionPane.OK_OPTION) {
-                int id = Integer.parseInt(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString());
-                int status = brg.delete(id);
+                //int id = Integer.parseInt(frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 0).toString());
+                String nama = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 1).toString());
+                String material = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 2).toString());
+                String ukuran = (frame.getBarangTable().getValueAt(frame.getBarangTable().getSelectedRow(), 3).toString());
+                int status = brg.delete(nama, material, ukuran);
                 if (status != 0) {
                     setButtonEnabled(false);
                     setFieldEnabled(false);
