@@ -12,9 +12,9 @@ package model;
 public interface BarangInc {
     public int insert(domain.Barang b);
 
-    public int update(domain.Barang b, int oldId);
+    public int update(domain.Barang b, String nama, String material, String ukuran);
 
-    public int delete(int id);
+    public int delete(String nama, String material, String ukuran);
 
     public java.util.List<domain.Barang> select();
     

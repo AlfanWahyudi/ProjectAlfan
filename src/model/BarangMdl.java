@@ -22,8 +22,8 @@ public class BarangMdl implements BarangInc{
     
     private final Koneksi db;
     private static final String QUERY_INSERT = "INSERT INTO barang VALUES(?,?,?,?,?)";
-    private static final String QUERY_UPDATE = "UPDATE barang SET nama=?, material=?, ukuran=?, hargaSatuan=? WHERE id=?";
-    private static final String QUERY_DELETE = "DELETE FROM barang WHERE id=?";
+    private static final String QUERY_UPDATE = "UPDATE barang SET nama=?, material=?, ukuran=?, hargaSatuan=? WHERE nama=? and material=? and ukuran=?";
+    private static final String QUERY_DELETE = "DELETE FROM barang WHERE nama=? and material=? and ukuran=?";
     private static final String QUERY_SELECT = "SELECT * FROM barang";
 
     public BarangMdl() {
@@ -45,13 +45,15 @@ public class BarangMdl implements BarangInc{
     }
 
     @Override
-    public int update(Barang b, int oldId) {
+    public int update(Barang b, String nama, String material, String ukuran) {
         try (PreparedStatement p = db.prep(QUERY_UPDATE)) {
             p.setString(1, b.getNama());
             p.setString(2, b.getMaterial());
             p.setString(3, b.getUkuran());
             p.setInt(4, b.getHargaSatuan());
-            p.setInt(5, oldId);
+            p.setString(5, nama);
+            p.setString(6, material);
+            p.setString(7, ukuran);
             return p.executeUpdate();
         } catch (SQLException ex) {
             err(ex);
@@ -60,9 +62,11 @@ public class BarangMdl implements BarangInc{
     }
 
     @Override
-    public int delete (int id) {
+    public int delete (String nama, String material, String ukuran) {
         try (PreparedStatement p = db.prep(QUERY_DELETE)) {
-            p.setInt(1, id);
+           p.setString(1, nama);
+            p.setString(2, material);
+            p.setString(3, ukuran);
             return p.executeUpdate();
         } catch (SQLException ex) {
             err(ex);
